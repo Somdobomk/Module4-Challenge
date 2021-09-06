@@ -29,5 +29,3 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 ```
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
