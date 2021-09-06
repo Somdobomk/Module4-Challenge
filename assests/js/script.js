@@ -5,65 +5,55 @@ var scoreElement = document.getElementById('main');
 var initial = null;
 console.log(startButton);
 
-var timeLeft = 55;
+var timeLeft = 59;
 
-// Question array and index
 var questions = [
 	{
+		question: 'What does HTML stand for?',
+		a: 'Hyper Tag Markup Language',
+		b: 'Hyper Text Markup Language',
+		c: 'Hyperlinks Text Mark Language',
+		d: 'Hyperlinking Text Marking Language',
+		answer: 'Hyper Text Markup Language',
+	},
+	{
 		question:
-			'What is the language used to describe the presentation of a document?',
-		a: 'HTML',
-		b: 'JavaScript',
-		c: 'CSS',
-		d: 'C+',
-		answer: 'CSS',
+			'What is the correct way to specify padding for all 4 sides at once?',
+		a: 'padding: top bottom left right;',
+		b: 'padding: top left bottom right;',
+		c: 'padding: top right bottom left;',
+		d: 'padding: left right top bottom;',
+		answer: 'padding: top right bottom left;',
 	},
 	{
-		question: 'Which one of these headings has a bigger font size?',
-		a: 'h1',
-		b: 'h2',
-		c: 'h3',
-		d: 'h4',
-		answer: 'h1',
+		question:
+			'Which attribute tells the browser where to go when a hyperlink is clicked?',
+		a: 'src',
+		b: 'url',
+		c: 'link',
+		d: 'href',
+		answer: 'href',
 	},
 	{
-		question: 'Which of these elements can create a section in an HTML?',
-		a: 'section',
-		b: 'article',
-		c: 'div',
-		d: 'All of the Above',
-		answer: 'All of the Above',
-	},
-	{
-		question: 'What style creates space around an element?',
-		a: 'Margin',
-		b: 'Padding',
-		c: 'Border',
-		d: 'Position',
-		answer: 'Margin',
-	},
-	{
-		question: 'What does console.log do?',
-		a: 'Creates functions in the console',
-		b: 'Outputs messages to the console',
-		c: 'Displays the HTML in the console',
-		d: 'Creates log-in information',
-		answer: 'Outputs messages to the console',
+		question: 'What does CSS stand for?',
+		a: 'Computer Styled Sections',
+		b: 'Cascading Style Sheets',
+		c: 'Crazy Solid Shapes',
+		d: 'None of the above',
+		answer: 'Cascading Style Sheets',
 	},
 ];
 
 questionindex = 0;
 
-// starts the quiz
 function startQuiz() {
 	countdown();
 	displayquestion();
 }
 
-//timer function
 function countdown() {
 	var interval = setInterval(function () {
-		if (questionindex < 5 && timeLeft > 0) {
+		if (questionindex < 4 && timeLeft > 0) {
 			timerElement.textContent = 'Time: ' + timeLeft;
 			timeLeft--;
 		} else if (timeLeft === 1) {
@@ -77,9 +67,8 @@ function countdown() {
 	}, 1000);
 }
 
-// displays question function
 function displayquestion() {
-	if (questionindex < 5) {
+	if (questionindex < 4) {
 		document.getElementById('main').innerHTML = '';
 
 		var current = questions[questionindex];
@@ -113,10 +102,8 @@ function displayquestion() {
 	}
 }
 
-// Display Highscores
 function displayHighScores() {}
 
-// answer check function
 function anwserCheck() {
 	console.log(this);
 	if (questions[questionindex].answer === this.textContent) {
@@ -133,7 +120,6 @@ function anwserCheck() {
 	}
 }
 
-// Score Page
 function score() {
 	document.getElementById('main').innerHTML = '';
 
@@ -155,7 +141,6 @@ function score() {
 	submit.onclick = saveScore;
 }
 
-// Save Score and Name
 function saveScore() {
 	var userscore = {
 		name: initial.value,
@@ -170,7 +155,6 @@ function saveScore() {
 	questionindex = 0;
 }
 
-// Load Score and Name
 var viewscore = document.querySelector('.highScore');
 viewscore.addEventListener('click', loadScore);
 function loadScore() {
@@ -185,8 +169,6 @@ function loadScore() {
 	}
 }
 
-// Highscores
 var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
 
-// Start Button
 startButton.onclick = startQuiz;
