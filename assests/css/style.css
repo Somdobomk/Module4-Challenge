@@ -1,0 +1,45 @@
+* {
+	margin: 20px;
+}
+
+body {
+	background-color: #1e1e1e;
+}
+
+.content {
+	background-color: #fff;
+	border-radius: 20px;
+	border: #fe8019 solid 2px;
+}
+
+.row {
+	justify-content: space-between;
+	border-bottom: #fe8019 solid 1px;
+}
+
+.row2 {
+	border-top: #fe8019 solid 1px;
+}
+
+.highScore {
+	color: #fe8019;
+	display: flex;
+}
+
+.mainstyle p {
+	padding: 5px;
+	font-size: large;
+	background: #fe8019;
+	color: white;
+	font-family: monospace;
+	font-weight: bolder;
+	border-radius: 7px;
+}
+
+.mainstyle p:hover {
+	background-color: ##fe8019;
+}
+
+.timeleft {
+	display: flex;
+}
