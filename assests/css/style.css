@@ -16,9 +16,15 @@ body {
 }
 
 .highScore {
-	color: #fe8019;
 	display: flex;
+	justify-content: center;
+	color: #1e1e1e;
 	font-size: 20px;
+}
+
+.highScore:hover {
+	color: #fe8019;
+	text-decoration: underline;
 }
 
 .mainstyle p {
@@ -37,6 +43,7 @@ body {
 
 .timeleft {
 	display: flex;
+	justify-content: center;
 	color: #1e1e1e;
 	font-size: 20px;
 }
