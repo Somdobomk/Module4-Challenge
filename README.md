@@ -3,7 +3,7 @@
 # [DEMO](https://somdobomk-module4-challenge.netlify.app/)
 
 <div align="center">
-    <img src="./assets/images/screenshot.gif" width="400px"> 
+    <img src="./assests/images/screenshot.gif" width="400px"> 
 </div>
 
 ## User Story
